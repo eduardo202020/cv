@@ -1,0 +1,35 @@
+name: Compilar CV
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar XeLaTeX y paquetes requeridos
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends \
+            make \
+            texlive-fonts-extra \
+            texlive-latex-extra \
+            texlive-xetex
+
+      - name: Compilar y verificar CV
+        run: make verify
+
+      - name: Publicar PDF como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: eduardo-guevara-cv
+          path: output/pdf/eduardo-guevara-cv.pdf
+          if-no-files-found: error

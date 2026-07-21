@@ -1,0 +1,21 @@
+* text=auto
+
+.editorconfig text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.tex text eol=lf
+*.sty text eol=lf
+*.md text eol=lf
+Makefile text eol=lf
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.ps1 text eol=crlf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+
+# La plantilla original se conserva sin reescribir su formato heredado.
+plantilla/** -whitespace
