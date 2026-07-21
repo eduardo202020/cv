@@ -1,0 +1,3 @@
+. repo satApp: https://github.com/eduardo202020/satApp
+- repo portafolio: https://github.com/eduardo202020/portafolio-Tech
+- link portafolio web: https://portafolio-eduardo.vercel.app/

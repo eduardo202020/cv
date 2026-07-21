@@ -1,0 +1,167 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cvstyle}[2026/07/21 Estilo del CV de Eduardo Guevara]
+
+\RequirePackage[a4paper,left=0cm,right=0cm,top=0cm,bottom=0cm]{geometry}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{hyperref}
+\RequirePackage{adjustbox}
+\RequirePackage{eso-pic}
+\RequirePackage{tikz}
+\RequirePackage{fontawesome5}
+
+\definecolor{cvnavy}{HTML}{111A31}
+\definecolor{cvcyan}{HTML}{C9F2FF}
+\definecolor{cvaccent}{HTML}{11A8D8}
+\definecolor{cvmuted}{HTML}{4F5D73}
+\definecolor{cvline}{HTML}{A8B4C5}
+\definecolor{cvtag}{HTML}{F7FCFF}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=cvnavy,
+  linkcolor=cvnavy,
+  pdfauthor={Eduardo Guevara},
+  pdftitle={Curriculum Vitae - Eduardo Guevara},
+  pdfsubject={Full-Stack, Mobile and AI Builder},
+  pdfkeywords={Full-Stack, React, React Native, FastAPI, AI, RAG, Automation, IoT, Raspberry Pi, Codex}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\fboxsep}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=4mm,itemsep=1.2mm,topsep=1mm,parsep=0pt}
+
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{\color{cvcyan}\rule{8.55cm}{\paperheight}}%
+}
+
+\newcommand{\firstheader}{%
+  \colorbox{cvnavy}{\begin{minipage}[c][3.35cm][c]{\paperwidth}
+    \centering\color{white}
+    {\fontsize{27}{30}\selectfont Eduardo \textbf{Guevara}}\\[1.5mm]
+    {\fontsize{11}{13}\selectfont Full-Stack, Mobile \& AI Builder con foco en producto y automatización}
+  \end{minipage}}\par%
+}
+
+\newcommand{\nextheader}{%
+  \colorbox{cvnavy}{\begin{minipage}[c][1.4cm][c]{\paperwidth}
+    \hspace{6mm}\color{white}{\large Eduardo \textbf{Guevara}}
+    \hfill {\normalsize Portafolio técnico \quad \faLightbulb\ producto \quad \faCode\ IA}
+    \hfill {\normalsize Curriculum Vitae}\hspace{6mm}
+  \end{minipage}}\par%
+}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{1mm}{\color{cvnavy}\fontsize{15}{17}\selectfont\bfseries #1}\par
+  \vspace{0.4mm}{\color{cvline}\hrule height 0.55pt}\vspace{1.6mm}
+}
+
+\newcommand{\sidehrulefill}{%
+  {\color{cvnavy}\leavevmode\leaders\hrule height 0.55pt\hfill\kern\z@}%
+}
+
+\newcommand{\sideheading}[1]{%
+  \par\vspace{2.4mm}\noindent
+  \raisebox{0.25\baselineskip}{\makebox[\linewidth]{%
+    \sidehrulefill\hspace{1ex}%
+    \raisebox{-0.25\baselineskip}{\large\bfseries\color{cvnavy}#1}%
+    \hspace{1ex}\sidehrulefill}}
+  \par\vspace{1.6mm}
+}
+
+\newcommand{\contactline}[2]{%
+  \begin{tabular}{@{}>{\centering\arraybackslash\color{cvnavy}}m{7mm}@{\hspace{1mm}}>{\raggedright\arraybackslash}m{6.35cm}@{}}
+    {\normalsize #1} & \strut #2
+  \end{tabular}\vspace{1mm}
+}
+
+\newcommand{\langline}[2]{%
+  \begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash}p{7mm}X@{}}\includegraphics[width=4.5mm]{#1} & #2\end{tabularx}\vspace{1mm}
+}
+
+\newcommand{\profilephoto}[2]{%
+  \href{#2}{\begin{tikzpicture}
+    \clip (0,0) circle (2.08cm);
+    \node at (0,0) {\includegraphics[width=4.18cm,height=4.18cm]{#1}};
+  \end{tikzpicture}}%
+}
+
+\newcommand{\cventry}[5]{%
+  \begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash\bfseries}p{2.05cm}!{\color{cvline}\vrule width .55pt\hspace{2.7mm}}X@{}}
+    #1 & {\bfseries #2}\hfill {\footnotesize\faMapMarker\enspace #5}\par
+    {\itshape #3}\par
+    \vspace{0.5mm}{\small #4}
+  \end{tabularx}\vspace{2mm}
+}
+
+\newcommand{\skillrow}[2]{%
+  \begingroup
+  \renewcommand{\arraystretch}{1.16}%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash\bfseries\color{cvnavy}\small}p{2.65cm}!{\hspace{1.8mm}\color{cvline}\vrule width .55pt\hspace{2.5mm}}>{\raggedright\arraybackslash\small}X@{}}
+    \strut #1 & \strut #2
+  \end{tabularx}%
+  \endgroup\vspace{1.4mm}
+}
+
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline=(tag.base)]{\node[
+    anchor=base,
+    draw=cvaccent!55,
+    fill=cvtag,
+    rounded corners=3pt,
+    inner xsep=1.5mm,
+    inner ysep=1.15mm,
+    text height=1.5ex,
+    text depth=.3ex
+  ] (tag) {\small\color{cvnavy}#1};}\hspace{0.8mm}\vspace{1.2mm}
+}
+
+\newcommand{\apppreview}[6]{%
+  \noindent\begin{minipage}[t]{5.5cm}\vspace{0pt}
+    \href{#6}{%
+      \includegraphics[width=1.75cm,height=3.11cm,keepaspectratio]{#2}\hspace{0.9mm}%
+      \includegraphics[width=1.75cm,height=3.11cm,keepaspectratio]{#3}\hspace{0.9mm}%
+      \includegraphics[width=1.75cm,height=3.11cm,keepaspectratio]{#4}}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{5.35cm}\vspace{0pt}
+    {\bfseries\color{cvnavy}#1}\par\vspace{0.5mm}{\footnotesize #5}
+  \end{minipage}\par\vspace{0.5mm}
+}
+
+\newcommand{\webpreview}[4]{%
+  \noindent\begin{minipage}[t]{5.5cm}\vspace{0pt}
+    \href{#4}{\includegraphics[width=5.2cm,height=2.9cm,keepaspectratio]{#2}}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{5.35cm}\vspace{0pt}
+    {\bfseries\color{cvnavy}#1}\par\vspace{0.5mm}{\footnotesize #3}
+  \end{minipage}\par\vspace{0.5mm}
+}
+
+\newenvironment{sidebarfirst}{%
+  \begin{minipage}[t]{8.55cm}\vspace{4mm}\hspace{6mm}\begin{minipage}[t]{7.35cm}\small
+}{%
+  \end{minipage}\end{minipage}%
+}
+
+\newenvironment{sidebarnext}{%
+  \begin{minipage}[t]{8.55cm}\vspace{4mm}\hspace{6mm}\begin{minipage}[t]{7.35cm}\small
+}{%
+  \end{minipage}\end{minipage}%
+}
+
+\newenvironment{mainfirst}{%
+  \begin{minipage}[t]{11.65cm}\vspace{2.5mm}\begin{minipage}[t]{11.15cm}\small
+}{%
+  \end{minipage}\end{minipage}%
+}
+
+\newenvironment{mainnext}{%
+  \begin{minipage}[t]{11.65cm}\vspace{0.5mm}\begin{minipage}[t]{11.15cm}\small
+}{%
+  \end{minipage}\end{minipage}%
+}
