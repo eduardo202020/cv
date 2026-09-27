@@ -2,7 +2,7 @@
 
 Repositorio reproducible del currículum de Eduardo Guevara, construido con XeLaTeX. Incluye los fuentes, recursos gráficos, referencias de diseño, scripts multiplataforma, el PDF final y una validación automática con GitHub Actions.
 
-[Abrir el PDF compilado](output/pdf/eduardo-guevara-cv.pdf)
+[Abrir el CV visual](output/pdf/eduardo-guevara-cv.pdf) · [Abrir el CV ATS](output/pdf/eduardo-guevara-cv-ats.pdf)
 
 ## Inicio rápido
 
@@ -25,7 +25,7 @@ En Windows PowerShell:
 .\build.ps1
 ```
 
-El script de PowerShell utiliza XeLaTeX instalado en Windows. Si no lo encuentra, intenta compilar automáticamente mediante WSL. El resultado se escribe siempre en `output/pdf/eduardo-guevara-cv.pdf`.
+El script de PowerShell utiliza XeLaTeX instalado en Windows. Si no lo encuentra, intenta compilar automáticamente mediante WSL. Genera `output/pdf/eduardo-guevara-cv.pdf` (visual) y `output/pdf/eduardo-guevara-cv-ats.pdf` (una página y una columna para sistemas ATS).
 
 ## Requisitos
 
@@ -56,7 +56,8 @@ En PowerShell, `build.ps1 -Clean` limpia primero los archivos generados y vuelve
 
 ```text
 .
-|-- main.tex                         # contenido del CV
+|-- main.tex                         # contenido del CV visual
+|-- main-ats.tex                     # versión de una página compatible con ATS
 |-- cvstyle.sty                      # diseño y componentes reutilizables
 |-- perfil.png                       # fotografía de perfil
 |-- src/
@@ -71,16 +72,16 @@ En PowerShell, `build.ps1 -Clean` limpia primero los archivos generados y vuelve
 |-- Makefile                         # interfaz de construcción
 |-- AGENTS.md                        # instrucciones para asistentes de IA
 |-- .github/workflows/build-cv.yml   # compilación automática en GitHub
-`-- output/pdf/eduardo-guevara-cv.pdf
+`-- output/pdf/                      # PDFs visual y ATS
 ```
 
 ## Editar y actualizar
 
-1. Modifica el contenido en `main.tex`.
+1. Modifica el contenido visual en `main.tex` y mantén alineada la versión ATS en `main-ats.tex`.
 2. Ajusta colores, espaciado o componentes en `cvstyle.sty`.
 3. Sustituye imágenes conservando sus rutas o actualiza `\graphicspath`.
 4. Ejecuta `make verify` o `.\build.ps1`.
-5. Revisa visualmente las dos páginas antes de publicar el PDF.
+5. Revisa visualmente las dos páginas del CV visual y la página única del CV ATS.
 
 Los enlaces del documento son interactivos, incluida la fotografía de perfil, el QR y las capturas de las aplicaciones.
 
@@ -92,4 +93,4 @@ Los enlaces del documento son interactivos, incluida la fotografía de perfil, e
 
 Cada `push` y `pull request` ejecuta `.github/workflows/build-cv.yml` en Ubuntu. El flujo instala XeLaTeX, compila el CV y publica el PDF como artefacto descargable. Esto comprueba que el proyecto pueda reconstruirse fuera de la computadora original.
 
-Enlaces principales: [portafolio web](https://portafolio-eduardo.vercel.app/), [código del portafolio](https://github.com/eduardo202020/portafolio-Tech) y [Papeleta Clara / satApp](https://github.com/eduardo202020/satApp).
+Enlaces principales: [portafolio web](https://portafolio-tech-eight.vercel.app/), [código del portafolio](https://github.com/eduardo202020/portafolio-Tech) y [Papeleta Clara / satApp](https://github.com/eduardo202020/satApp).

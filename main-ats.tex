@@ -1,0 +1,100 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1.45cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\definecolor{atsnavy}{HTML}{111A31}
+\definecolor{atsaccent}{HTML}{087FA8}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=atsaccent,
+  pdfauthor={Eduardo Guevara},
+  pdftitle={Eduardo Guevara - Full-Stack Developer},
+  pdfsubject={Full-Stack Developer, AI, Cloud and Automation},
+  pdfkeywords={Full-Stack Developer, Python, FastAPI, React, Next.js, TypeScript, React Native, PostgreSQL, AI, AWS, Google Cloud, Terraform, IaC, Linux, RAG, Power Automate, Automation}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlist[itemize]{leftmargin=4.5mm,itemsep=0.25mm,topsep=0.5mm,parsep=0pt,partopsep=0pt}
+
+\newcommand{\atssection}[1]{%
+  \vspace{1.7mm}{\large\bfseries\color{atsnavy}#1}\par
+  \vspace{0.45mm}{\color{atsaccent}\hrule height 0.55pt}\vspace{0.9mm}
+}
+
+\newcommand{\atsentry}[4]{%
+  \textbf{#1}\if\relax\detokenize{#2}\relax\else\ \textbar\ \textbf{#2}\fi\par
+  \textit{#3}\par
+  #4\vspace{1.1mm}
+}
+
+\begin{document}
+
+{\LARGE\bfseries\color{atsnavy}Eduardo Guevara}\par
+\vspace{0.7mm}
+{\large Full-Stack Developer \textbar\ Python \textbar\ React \textbar\ IA \textbar\ AWS \textbar\ IaC}\par
+\vspace{1mm}
+Lima, Perú \textbar\ +51 991 004 126 \textbar\ \href{mailto:jguevaral@uni.pe}{jguevaral@uni.pe}\par
+\href{https://www.linkedin.com/in/jhunior-guevara-889483162}{LinkedIn} \textbar\
+\href{https://github.com/eduardo202020}{GitHub} \textbar\
+\href{https://portafolio-tech-eight.vercel.app/}{Portafolio}
+
+\atssection{RESUMEN PROFESIONAL}
+Desarrollador full-stack e ingeniero electrónico con experiencia en productos web y móviles, automatización bancaria, infraestructura cloud e IA aplicada. Trabajo con Python, FastAPI, React, Next.js, TypeScript, React Native y PostgreSQL, integrando sistemas y llevando soluciones desde el prototipo hasta producción.
+
+\atssection{EXPERIENCIA PROFESIONAL}
+\atsentry{Automatización bancaria e infraestructura cloud}{2026}{NTT DATA}{%
+  \begin{itemize}
+    \item Desarrollo y automatización de procesos bancarios mediante OneDrive, Teams, Power Automate, macros y Mainframe 3270.
+    \item Aplicación de IA como apoyo al desarrollo de software y a la optimización de flujos de automatización.
+    \item Gestión de infraestructura en AWS y Google Cloud con Terraform, aprovisionando servicios serverless, permisos IAM y redes VPC.
+  \end{itemize}}
+
+\atsentry{Full-Stack Software Developer}{2024--2026}{Tech Labs - Universidad Nacional de Ingeniería}{%
+  \begin{itemize}
+    \item Construcción end-to-end de una plataforma en producción con Next.js, React, TypeScript, PostgreSQL y Supabase.
+    \item Implementación de autenticación por roles, inventario, préstamos, calendario y visualización 3D de recursos.
+  \end{itemize}}
+
+\atsentry{Desarrollador Full-Stack Freelance}{2022--2024}{Proyectos propios y por encargo}{%
+  \begin{itemize}
+    \item Desarrollo de aplicaciones web y móviles, APIs con FastAPI y automatizaciones con Python y LLMs.
+    \item Participación en planificación, arquitectura, implementación, revisión y entrega de soluciones funcionales.
+  \end{itemize}}
+
+\atsentry{Ingeniero Electrónico}{2014--2022}{Universidad Nacional de Ingeniería}{%
+  Investigación y desarrollo de soluciones con Raspberry Pi, sensores, IoT, integración de servicios e IA aplicada.}
+
+\atssection{PROYECTOS DESTACADOS}
+\atsentry{Papeleta Clara}{2026}{React Native, FastAPI}{%
+  Primer lugar en la Hackatón Nacional Transformagob 2026, organizada por la Presidencia del Consejo de Ministros (PCM). Aplicación para el SAT que permite consultar papeletas, revisar plazos y evidencias, y recibir orientación por voz o texto. \href{https://github.com/eduardo202020/satApp}{Repositorio}.}
+
+\atsentry{MuseIQ + MuseRAG}{2026}{React Native, Expo, FastAPI, Chroma}{%
+  Aplicación de recorridos de museo con beacons BLE, voz y chat contextual; backend RAG adaptado al museo, sala y obra activa. \href{https://github.com/eduardo202020/museApp}{Repositorio}.}
+
+\atsentry{Tech Labs}{2024--2026}{Next.js, TypeScript, PostgreSQL, Supabase}{%
+  Plataforma en producción para inventario, préstamos, autenticación, calendario y visualización de recursos tecnológicos. \href{https://github.com/eduardo202020/tech-lab}{Repositorio}.}
+
+\atsentry{Gran Chef App}{}{Aplicación móvil}{%
+  Experiencia culinaria con recetas, filtros, favoritos, modo cocina y navegación visual centrada en contenido. \href{https://github.com/eduardo202020/food_app_v2}{Repositorio}.}
+
+\atssection{HABILIDADES TÉCNICAS}
+\textbf{Frontend y móvil:} React, Next.js, TypeScript, React Native, Expo.\par
+\textbf{Backend y datos:} Python, FastAPI, PostgreSQL, Supabase, SQLite, Chroma.\par
+\textbf{IA y automatización:} LLMs, LangChain, RAG, prompts, Power Automate, Microsoft 365, macros, Mainframe 3270.\par
+\textbf{Cloud e infraestructura:} AWS, Google Cloud, Terraform, IaC, Linux servers, serverless, IAM, VPC.\par
+\textbf{Hardware e integración:} Raspberry Pi, sensores, BLE, IoT.
+
+\atssection{EDUCACIÓN E IDIOMAS}
+\textbf{Ingeniería Electrónica} - Universidad Nacional de Ingeniería.\par
+\textbf{Formación en desarrollo de software} - Platzi.\par
+Español nativo \textbar\ Inglés intermedio.
+
+\end{document}

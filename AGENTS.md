@@ -8,7 +8,8 @@ Estas instrucciones se aplican a todo el repositorio.
 
 ## Fuentes de verdad
 
-- `main.tex`: contenido, enlaces y orden de las secciones.
+- `main.tex`: contenido, enlaces y orden de las secciones del CV visual.
+- `main-ats.tex`: versión lineal de una página para sistemas ATS.
 - `cvstyle.sty`: geometría, tipografía, colores y componentes visuales.
 - `perfil.png`: fotografía de perfil.
 - `src/apps/previews/`: capturas optimizadas que aparecen en el PDF.
@@ -17,12 +18,13 @@ Estas instrucciones se aplican a todo el repositorio.
 - `cv.pdf`: CV de referencia.
 - `plantilla/`: plantilla LaTeX original de referencia.
 - `output/pdf/eduardo-guevara-cv.pdf`: artefacto final que se entrega y versiona.
+- `output/pdf/eduardo-guevara-cv-ats.pdf`: versión ATS que también se entrega y versiona.
 
 No edites directamente el PDF generado. Modifica los fuentes y recompila.
 
 ## Restricciones de diseño
 
-- Mantener exactamente dos páginas A4.
+- Mantener exactamente dos páginas A4 en el CV visual y una página A4 en la versión ATS.
 - Mantener la barra lateral celeste y la cabecera azul marino.
 - Conservar la fotografía circular y enlazada al portafolio.
 - Conservar alineados los iconos y textos de contacto e idiomas.
@@ -38,7 +40,7 @@ Si se añade contenido, primero optimiza redacción y espacios existentes. No re
 
 1. Lee `README.md`, `main.tex` y las macros relevantes de `cvstyle.sty`.
 2. Inspecciona `git status` antes de editar y conserva cambios ajenos.
-3. Realiza cambios de contenido en `main.tex` y cambios reutilizables de diseño en `cvstyle.sty`.
+3. Realiza cambios de contenido visual en `main.tex`, sincroniza la información relevante en `main-ats.tex` y aplica cambios reutilizables de diseño en `cvstyle.sty`.
 4. Compila con uno de los comandos soportados.
 5. Revisa el log y confirma que no existan errores ni cajas desbordadas.
 6. Renderiza visualmente ambas páginas y comprueba alineación, márgenes y legibilidad.
@@ -74,7 +76,7 @@ Antes de considerar terminado un cambio:
 
 - La compilación debe finalizar con código `0`.
 - El PDF debe existir y no estar vacío.
-- El PDF debe tener exactamente dos páginas.
+- El CV visual debe tener exactamente dos páginas y la versión ATS exactamente una.
 - El log no debe contener `LaTeX Error`, `Emergency stop` ni `Overfull`.
 - Ambas páginas deben revisarse visualmente después del último cambio significativo.
 - La fotografía, el QR, las capturas y los iconos deben renderizarse correctamente.

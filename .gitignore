@@ -17,9 +17,10 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Solo se versiona el PDF final dentro del directorio de salida
+# Solo se versionan los PDFs finales dentro del directorio de salida
 output/pdf/*
 !output/pdf/eduardo-guevara-cv.pdf
+!output/pdf/eduardo-guevara-cv-ats.pdf
 
 # Artefactos generados al compilar la plantilla de referencia
 plantilla/main.pdf

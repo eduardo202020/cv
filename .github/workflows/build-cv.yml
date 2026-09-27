@@ -27,9 +27,11 @@ jobs:
       - name: Compilar y verificar CV
         run: make verify
 
-      - name: Publicar PDF como artefacto
+      - name: Publicar PDFs como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: eduardo-guevara-cv
-          path: output/pdf/eduardo-guevara-cv.pdf
+          path: |
+            output/pdf/eduardo-guevara-cv.pdf
+            output/pdf/eduardo-guevara-cv-ats.pdf
           if-no-files-found: error

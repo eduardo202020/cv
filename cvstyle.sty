@@ -26,8 +26,8 @@
   linkcolor=cvnavy,
   pdfauthor={Eduardo Guevara},
   pdftitle={Curriculum Vitae - Eduardo Guevara},
-  pdfsubject={Full-Stack, Mobile and AI Builder},
-  pdfkeywords={Full-Stack, React, React Native, FastAPI, AI, RAG, Automation, IoT, Raspberry Pi, Codex}
+  pdfsubject={Full-Stack Developer, AI, Cloud and Automation},
+  pdfkeywords={Full-Stack Developer, Python, FastAPI, React, Next.js, TypeScript, AI, AWS, Google Cloud, Terraform, IaC, Linux, RAG, Power Automate, Automation}
 }
 
 \pagestyle{empty}
@@ -44,7 +44,7 @@
   \colorbox{cvnavy}{\begin{minipage}[c][3.35cm][c]{\paperwidth}
     \centering\color{white}
     {\fontsize{27}{30}\selectfont Eduardo \textbf{Guevara}}\\[1.5mm]
-    {\fontsize{11}{13}\selectfont Full-Stack, Mobile \& AI Builder con foco en producto y automatización}
+    {\fontsize{11}{13}\selectfont Full-Stack Developer \textbar\ Python \textbar\ React \textbar\ IA \textbar\ AWS \textbar\ IaC}
   \end{minipage}}\par%
 }
 
@@ -92,11 +92,16 @@
 }
 
 \newcommand{\cventry}[5]{%
-  \begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash\bfseries}p{2.05cm}!{\color{cvline}\vrule width .55pt\hspace{2.7mm}}X@{}}
-    #1 & {\bfseries #2}\hfill {\footnotesize\faMapMarker\enspace #5}\par
+  \begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash\bfseries}p{2.05cm}!{\color{cvline}\vrule width .55pt\hspace{2.7mm}}>{\raggedright\arraybackslash}X@{}}
+    #1 & {\bfseries #2}\hfill {\footnotesize\if\relax\detokenize{#5}\relax\else\faMapMarker\enspace #5\fi}\par
     {\itshape #3}\par
-    \vspace{0.5mm}{\small #4}
+    \vspace{0.5mm}{#4}
   \end{tabularx}\vspace{2mm}
+}
+
+\newcommand{\projectentry}[4]{%
+  \noindent\href{#4}{{\bfseries\color{cvnavy}#1}}\hfill{\small\itshape #2}\par
+  \vspace{0.35mm}{\small #3}\par\vspace{1.4mm}
 }
 
 \newcommand{\skillrow}[2]{%
@@ -155,7 +160,7 @@
 }
 
 \newenvironment{mainfirst}{%
-  \begin{minipage}[t]{11.65cm}\vspace{2.5mm}\begin{minipage}[t]{11.15cm}\small
+  \begin{minipage}[t]{11.65cm}\vspace{2.5mm}\begin{minipage}[t]{11.15cm}\normalsize
 }{%
   \end{minipage}\end{minipage}%
 }
